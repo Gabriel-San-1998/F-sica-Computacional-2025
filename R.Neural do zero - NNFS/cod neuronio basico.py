@@ -13,5 +13,5 @@ output= inputs[0]*weigths[0] + inputs[1]*weigths[1] + inputs[2]*weigths[2] + bia
 
 print(output)
 
-
+#video 1YT
 
