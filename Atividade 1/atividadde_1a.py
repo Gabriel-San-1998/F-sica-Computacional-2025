@@ -77,5 +77,5 @@ else:
     plt.ylabel(r'f(x)', fontsize=16)
     plt.xlabel('x', fontsize=16)
     plt.savefig(r'/home/gabas/Área de trabalho/F-sica-Computacional-2025/Atividade 1/1atv1a.png')
-
+    plt.show()
       
