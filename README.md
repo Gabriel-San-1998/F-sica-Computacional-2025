@@ -1,4 +1,4 @@
-Construindo uma rede neural do zero:
+Construindo uma rede neural:
 
 Esse repositório foi criado como parte da disciplina de física computacional do curso de mestrado da Universidade Federal de Uberlândia e tem como objetivo mostrar a construção de uma rede neural a partir de conhecimentos de Python. 
 
