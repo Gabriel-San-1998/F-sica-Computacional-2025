@@ -1,0 +1,98 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Listas correspondentes a P e T para cada arquivo
+P_valores = [ 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80,
+             0.90,  1.10, 1.20, 1.30, 1.40,
+             1.50, 1.60, 1.70, 1.80, 1.90, 2.00,
+              2.10, 2.20, 2.30, 2.40,
+             2.50 , 2.60, 2.70, 2.80, 2.90, 3.00,
+            3.10, 3.20, 3.30, 3.40, 3.50, 3.60, 3.70, 3.80, 3.90, 4.00,
+              4.10, 4.20, 4.30, 4.40, 4.50, 4.60, 4.70, 4.80, 4.90, 5.00,
+              5.10, 5.20, 5.30,
+            5.40, 5.50, 5.60, 5.70, 5.80, 5.90, 6.00]
+
+T_valores = [0.02, 0.04, 0.06, 0.08]  # Substitua pelos valores reais
+
+k_B = 1 # Constante de Boltzmann em unidades reduzidas
+
+# Inicializando a figura
+plt.figure(figsize=(8, 6))
+
+# Iterando sobre os valores de P
+for t in T_valores:
+    P = []
+    H = []
+    cp = []
+
+    for p in P_valores:
+        # Construindo o caminho do arquivo com base nos valores de P e T
+        nome_arquivo = f'/content/drive/MyDrive/Simulações TCC/Densidade inicial 0.08 - simulação completa/Thermo/thermodynamics_p{p:.2f}_t{t:.2f}.dat'
+
+        # Inicializando listas para armazenar dados do arquivo
+        coluna1 = []
+        coluna2 = []
+        coluna3 = []
+        coluna4 = []
+        coluna5 = []
+        coluna6 = []
+        coluna7 = []
+
+        # Lendo o arquivo
+        with open(nome_arquivo, 'r') as arquivo:
+            linhas = arquivo.readlines()
+
+            # Separando os valores das colunas, ignorando linhas que começam com #
+            for linha in linhas:
+                if not linha.startswith('#'):
+                    valores = linha.strip().split()
+                    coluna1.append(float(valores[0]))
+                    coluna2.append(float(valores[1]))
+                    coluna3.append(float(valores[2]))
+                    coluna4.append(float(valores[3]))
+                    coluna5.append(float(valores[4]))
+                    coluna6.append(float(valores[5]))
+                    coluna7.append(float(valores[6]))
+
+        # Cálculo das médias de temperatura, pressão e volume
+        media_T = np.mean(coluna2)
+        media_P = np.mean(coluna3)
+        media_V = np.mean(coluna5)
+        media_H = np.mean(coluna7)
+
+        # Calcular H + PV
+        HPV = np.array(coluna7) + media_P * media_V
+
+        # Calcular a flutuação ao quadrado
+        fluct_HPV2 = np.square(HPV - np.mean(HPV))
+        media_fluct_HPV2 = np.mean(fluct_HPV2)
+
+        # Calcular cp
+        cp_calc = media_fluct_HPV2 / (k_B * media_T**2)
+
+        P.append(media_P)
+        H.append(media_H)
+        cp.append(cp_calc)
+
+    # Plotando a curva para o valor atual de P
+    plt.plot(P, cp, label=rf'T*={t:.2f}')
+    plt.scatter(P, cp)  # Marcando os pontos com círculos
+
+# Adicionando título e legendas ao gráfico geral
+plt.title(r'Comportamento de $c_p$* com a variação de P*', fontsize=20)
+plt.tick_params(axis='both', which='major', labelsize=18)  # 'both' aplica tanto no eixo x quanto no y
+
+plt.xlabel('P*', fontsize=22)
+plt.ylabel(r'$c_p$*', fontsize=22)
+plt.legend(loc='upper right', fontsize=16 )
+plt.grid(True)
+
+# Salvando a imagem na pasta 'graficos' do Google Drive
+caminho_salvar = '/content/drive/MyDrive/Simulações TCC/Densidade inicial 0.08 - simulação completa/Thermo/Gráficos_cp_flutuação_H//'
+nome_imagem = 'Grafico_cp_T_0.02-0.08.png'
+
+plt.savefig( nome_imagem)
+
+# Exibindo o gráfico
+plt.show()
+
