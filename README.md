@@ -1,4 +1,8 @@
+#Física Computacional 2025.1
+
 Esse repositório foi criado como parte da disciplina de física computacional do curso de mestrado da Universidade Federal de Uberlândia e tem como objetivo mostrar a construção de uma rede neural a partir de conhecimentos de Python. 
+
+Além de atividades relacionadas ao aprendizado de máquina também desenvolvemos projetos sobre outros assuntos, como simulações DFT.
 
 Redes Neurais podem ser construídas a partir dos comandos mais básicos que as liguagens de programação disponibilizam, então se você considera seus conhecimentos básicos, isso não é um impeditivo para você acompanhar esse desenvolvimento, como pode ser visto na pasta 'R.Neural do zero - NNFS'. Iniciantes podem obter muita ajuda no canal do youtube: 'https://www.youtube.com/@sentdex'. 
 
