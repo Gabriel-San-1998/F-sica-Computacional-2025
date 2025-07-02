@@ -4,7 +4,7 @@ A proposta da atividade é construir um algoritmo que encontre o mínimo de fun�
 
 A primeira questão é relativamente simples devido ao formato do potencial, basta definir um chute inicial, realizar uma análise das derivadas da função no ponto e caso não seja um ponto com primeira derivada nula e segunda derivada positiva, continuar dando os passos. (Atenção: A escolha do tamanho do passo pode interferir na eficiência do algoritmo, tanto um passo muito grande quanto um passo muito pequeno não são interessantes).
 
-![ Encontrando o mínimo](1atv1.png)
+![ Encontrando o mínimo](1atv1a.png)
 
 A segunda questão nos da uma potencial com um desafio adicional, por ter 2 mínímos. É solicitado um código para que hora o algoritmo identifique um minimo e em outro processamento caia no outro minimo, essa resposta diferente pode ser obtida com diferentes passos ou com pontos iniciais diferentes. Outra forma de obter o mesmo resultado é garantir que os passos passem pelo máximo local e a partir dali seja realizado um sorteio aleatório para decidir se a direção do próximo passo. (Atenção: Devido ao máximo local, deve-se impor uma condição para que o algoritmo saiba o que fazer nesse ponto, visto que a primeira derivada nesse ponto é nula).
 
