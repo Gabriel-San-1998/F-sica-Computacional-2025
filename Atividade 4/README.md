@@ -9,6 +9,6 @@ Quando a taxa de resfriamento não é informada o peso da perda física se torna
 e para o algoritmo apresentado, só conseguimos bons resultados para um coeficiente que proporcionalmente valoriza 
 mais a informação física em relação a perda dos dados.
 
-![derivadas](PINN x NN.png)
+![ derivadas](PINN x NN.png)
 
 (OBS: A função de ativação tan não apresenta bons resultados, foi necessário usar a ReLU)
