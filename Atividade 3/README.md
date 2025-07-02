@@ -1,3 +1,13 @@
 # Atividade 03
-Nesta atividade, foram explorados fundamentos de orientação a objetos em python. Criamos uma classe chamada Particula que representa uma partícula em um espaço bidimensional. 
-![ orientação objeto ](trajetoria_particula.png)
+
+Nesta atividade, Treinamos algumas funções usando o TensorFlow para entender o comportamento de determinadas funções. 
+Foram treinadas funções teste como o seno, o cosseno e outras.
+O verdadeiro desafio da atividade foi treinar a NN para realizar derivadas numéricas do tipo:
+x_input  = x ** p
+x_output = p * x ** (p-1)
+
+então, a partir desse treino, usar NN para derivar funções trigonométricas.
+O exito foi obtido limitando a rede neural a treinar apenas expoentes pares com coeficientes pares
+e coeficientes ímpares com expoentes ímpares.
+
+![ derivadas](Derivada - treino principal/derivadas.png)
