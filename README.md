@@ -1,4 +1,4 @@
-#Física Computacional 2025.1
+# Física Computacional 2025.1
 
 Esse repositório foi criado como parte da disciplina de física computacional do curso de mestrado da Universidade Federal de Uberlândia e tem como objetivo mostrar a construção de uma rede neural a partir de conhecimentos de Python. 
 
